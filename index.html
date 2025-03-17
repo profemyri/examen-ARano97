@@ -33,7 +33,69 @@
         <input type="submit" value="Realizar Pedido">
     </form>
 
+    <fieldset>
+            <legend>Elige tu hamburguesa (obligatorio):</legend>
+            <label>
+                <input type="radio" name="hamburguesa" value="clasica" required>
+                Clásica
+            </label><br>
+            <label>
+                <input type="radio" name="hamburguesa" value="BBQ" required>
+                BBQ
+            </label><br>
+            <label>
+                <input type="radio" name="hamburguesa" value="especial" required>
+                Especial
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Ingredientes extra (opcional):</legend>
+            <label>
+                <input type="checkbox" name="ingredientes" value="bacon">
+                Bacon
+            </label><br>
+            <label>
+                <input type="checkbox" name="ingredientes" value="queso">
+                Queso
+            </label><br>
+            <label>
+                <input type="checkbox" name="ingredientes" value="huevo">
+                Huevo
+            </label><br>
+            <label>
+                <input type="checkbox" name="ingredientes" value="patatas">
+                Patatas
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Cantidad (obligatorio):</legend>
+            <input type="number" name="cantidad" min="1" max="5" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Método de pago (obligatorio):</legend>
+            <label>
+                <input type="radio" name="metodo_pago" value="efectivo" required>
+                Efectivo
+            </label><br>
+            <label>
+                <input type="radio" name="metodo_pago" value="tarjeta" required>
+                Tarjeta
+            </label><br>
+            <label>
+                <input type="radio" name="metodo_pago" value="paypal" required>
+                PayPal
+            </label>
+
+            <footer>
+            <p>&copy; 2023 Antonio Raño</p>
+            </footer>
+            
+        </fieldset>
+
+        <button type="submit">Enviar pedido</button>
         <script src="ex_html-css-js.js"></script>
-    
 </body>
 </html>
