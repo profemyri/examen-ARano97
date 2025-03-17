@@ -7,136 +7,157 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
             background-color: #f4f4f4;
+            display: flex; /* Cambiado a flex para manejar el layout */
+            align-items: flex-start; /* Alinea los elementos al inicio */
+            justify-content: center; /* Centra los elementos horizontalmente */
+            padding: 20px; /* Espacio alrededor del contenido */
         }
+
+        .container {
+            display: flex; /* Usar flexbox para contener la imagen y el formulario */
+            align-items: flex-start; /* Alinea los elementos al inicio */
+        }
+
         h1 {
             margin-top: 20px;
+            text-align: center; /* Centrar el título */
+            width: 100%; /* Asegurarse de que ocupe todo el ancho */
         }
+
         img {
             max-width: 300px;
             height: auto;
-            margin: 20px 0;
+            margin: 20px; /* Margen alrededor de la imagen */
         }
+
         form {
             background-color: #fff;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: inline-block;
-            margin: 0 auto;
+            margin-left: 20px; /* Margen a la izquierda para separarlo de la imagen */
+            width: 300px; /* Ancho fijo para el formulario */
         }
-        input[type="text"], input[type="email"], input[type="tel"], input[type="time"] {
+
+        input[type="text"], input[type="email"], input[type="tel"], input[type="time"], input[type="number"] {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 4px;
         }
-        input[type="submit"] {
+
+        input[type="submit"], button {
             background-color: #4CAF50;
             color: white;
             padding: 10px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            width: 100%; /* Hacer que el botón ocupe todo el ancho */
         }
-        input[type="submit"]:hover {
+
+        input[type="submit"]:hover, button:hover {
             background-color: #45a049;
+        }
+
+        footer {
+            text-align: center; /* Centrar el texto del pie de página */
+            margin-top: 20px; /* Margen superior para el pie de página */
         }
     </style>
 </head>
 <body>
 
+    <div class="container">
         <h1>Realiza tu pedido</h1>
-    <img src="cheese-burger.png" alt="Cheese Burger">
+        <img src="cheese-burger.png" alt="Cheese Burger">
+        <form action="#" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
 
-    <form action="#" method="post">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" name="apellidos" required>
 
-        <label for="apellidos">Apellidos:</label>
-        <input type="text" id="apellidos" name="apellidos" required>
+            <label for="direccion">Dirección (mínimo 15 caracteres):</label>
+            <input type="text" id="direccion" name="direccion" required minlength="15">
 
-        <label for="direccion">Dirección (mínimo 15 caracteres):</label>
-        <input type="text" id="direccion" name="direccion" required minlength="15">
+            <label for="telefono">Teléfono (9 dígitos):</label>
+            <input type="tel" id="telefono" name="telefono" required pattern="\d{9}">
 
-        <label for="telefono">Teléfono (9 dígitos):</label>
-        <input type="tel" id="telefono" name="telefono" required pattern="\d{9}">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+            <label for="hora">Hora de entrega:</label>
+            <input type="time" id="hora" name="hora" required>
 
-        <label for="hora">Hora de entrega:</label>
-        <input type="time" id="hora" name="hora" required>
+            <input type="submit" value="Realizar Pedido">
+        
+            <fieldset>
+                <legend>Elige tu hamburguesa (obligatorio):</legend>
+                <label>
+                    <input type="radio" name="hamburguesa" value="clasica" required>
+                    Clásica
+                </label><br>
+                <label>
+                    <input type="radio" name="hamburguesa" value="BBQ" required>
+                    BBQ
+                </label><br>
+                <label>
+                    <input type="radio" name="hamburguesa" value="especial" required>
+                    Especial
+                </label>
+            </fieldset>
 
-        <input type="submit" value="Realizar Pedido">
-    
-    <fieldset>
-            <legend>Elige tu hamburguesa (obligatorio):</legend>
-            <label>
-                <input type="radio" name="hamburguesa" value="clasica" required>
-                Clásica
-            </label><br>
-            <label>
-                <input type="radio" name="hamburguesa" value="BBQ" required>
-                BBQ
-            </label><br>
-            <label>
-                <input type="radio" name="hamburguesa" value="especial" required>
-                Especial
-            </label>
-        </fieldset>
+            <fieldset>
+                <legend>Ingredientes extra (opcional):</legend>
+                <label>
+                    <input type="checkbox" name="ingredientes" value="bacon">
+                    Bacon
+                </label><br>
+                <label>
+                    <input type="checkbox" name="ingredientes" value="queso">
+                    Queso
+                </label><br>
+                <label>
+                    <input type="checkbox" name="ingredientes" value="huevo">
+                    Huevo
+                </label><br>
+                <label>
+                    <input type="checkbox" name="ingredientes" value="patatas">
+                    Patatas
+                </label>
+            </fieldset>
 
-        <fieldset>
-            <legend>Ingredientes extra (opcional):</legend>
-            <label>
-                <input type="checkbox" name="ingredientes" value="bacon">
-                Bacon
-            </label><br>
-            <label>
-                <input type="checkbox" name="ingredientes" value="queso">
-                Queso
-            </label><br>
-            <label>
-                <input type="checkbox" name="ingredientes" value="huevo">
-                Huevo
-            </label><br>
-            <label>
-                <input type="checkbox" name="ingredientes" value="patatas">
-                Patatas
-            </label>
-        </fieldset>
+            <fieldset>
+                <legend>Cantidad (obligatorio):</legend>
+                <input type="number" name="cantidad" min="1" max="5" required>
+            </fieldset>
 
-        <fieldset>
-            <legend>Cantidad (obligatorio):</legend>
-            <input type="number" name="cantidad" min="1" max="5" required>
-        </fieldset>
+            <fieldset>
+                <legend>Método de pago (obligatorio):</legend>
+                <label>
+                    <input type="radio" name="metodo_pago" value="efectivo" required>
+                    Efectivo
+                </label><br>
+                <label>
+                    <input type="radio" name="metodo_pago" value="tarjeta" required>
+                    Tarjeta
+                </label><br>
+                <label>
+                    <input type="radio" name="metodo_pago" value="paypal" required>
+                    PayPal
+                </label>
+            </fieldset>
 
-        <fieldset>
-            <legend>Método de pago (obligatorio):</legend>
-            <label>
-                <input type="radio" name="metodo_pago" value="efectivo" required>
-                Efectivo
-            </label><br>
-            <label>
-                <input type="radio" name="metodo_pago" value="tarjeta" required>
-                Tarjeta
-            </label><br>
-            <label>
-                <input type="radio" name="metodo_pago" value="paypal" required>
-                PayPal
-            </label>
-
-            <footer>
-            <p>&copy; Antonio Raño</p>
-            </footer>
-            
-        </fieldset>
-
-        <button type="submit">Enviar pedido</button>
-        <script src="ex_html-css-js.js"></script>
+            <button type="submit">Enviar pedido</button>
         </form>
-    
+    </div>
+
+    <footer>
+        <p>&copy; Antonio Raño</p>
+    </footer>
+    <script src="ex_html-css-js.js"></script>
 </body>
 </html>
