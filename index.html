@@ -41,38 +41,31 @@
         <input type="time" id="hora" name="hora" required>
            
 
-        <legend>Elige tu hamburguesa (obligatorio):</legend>
-        <label>
-            <input type="radio" name="hamburguesa" value="clasica" required>
-            Clásica
-        </label><br>
-        <label>
-            <input type="radio" name="hamburguesa" value="BBQ" required>
-            BBQ
-        </label><br>
-        <label>
-            <input type="radio" name="hamburguesa" value="especial" required>
-            Especial
-        </label>
+        <form id="orderForm">
+        <label for="burgerType">Tipo de hamburguesa:</label>
+        <select id="burgerType" name="burgerType">
+            <option value="5.5">Clásica - $5.50</option>
+            <option value="7">BBQ - $7.00</option>
+            <option value="8">Especial - $8.00</option>
+        </select>
 
-        <legend>Ingredientes extra (opcional):</legend>
-        <label>
-            <input type="checkbox" name="ingredientes" value="bacon">
-            Bacon
-        </label><br>
-        <label>
-            <input type="checkbox" name="ingredientes" value="queso">
-            Queso
-        </label><br>
-        <label>
-            <input type="checkbox" name="ingredientes" value="huevo">
-            Huevo
-        </label><br>
-        <label>
-            <input type="checkbox" name="ingredientes" value="patatas">
-            Patatas
-        </label>
+        <br>
 
+        <label for="extraIngredients">Ingredientes extra ($1.50 cada uno):</label>
+        <input type="number" id="extraIngredients" name="extraIngredients" value="0" min="0">
+
+        <br>
+
+        <label for="quantity">Cantidad (1-5):</label>
+        <input type="number" id="quantity" name="quantity" value="1" min="1" max="5">
+
+        <br>
+
+        <h2>Precio total: $<span id="totalPrice">0.00</span></h2>
+
+        <button type="button" id="submitBtn" onclick="confirmOrder()">Enviar pedido</button>
+
+        
         <legend>Cantidad (obligatorio):</legend>
         <input type="number" name="cantidad" min="1" max="5" required>
 
