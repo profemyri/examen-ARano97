@@ -38,6 +38,29 @@
         return;
     }
 
+
+    function calculateTotal() {
+            const burgerPrice = parseFloat(document.getElementById("burgerType").value);
+            const extraIngredients = parseInt(document.getElementById("extraIngredients").value);
+            const quantity = parseInt(document.getElementById("quantity").value);
+
+            const total = (burgerPrice + (extraIngredients * 1.5)) * quantity;
+            document.getElementById("totalPrice").innerText = total.toFixed(2);
+        }
+
+        document.getElementById("burgerType").addEventListener("change", calculateTotal);
+        document.getElementById("extraIngredients").addEventListener("input", calculateTotal);
+        document.getElementById("quantity").addEventListener("input", calculateTotal);
+
+     function confirmOrder() {
+            const total = document.getElementById("totalPrice").innerText;
+            const confirmation = confirm(`¿Quieres confirmar y enviar tu pedido ahora?\nPrecio total: ${total}`);
+            if (confirmation) {
+                document.getElementById("orderForm").submit();
+            }
+        }
+
+        calculateTotal();
    
     alert("Formulario enviado correctamente.");
     this.submit();
