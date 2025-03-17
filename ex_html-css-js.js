@@ -3,12 +3,18 @@
 
     
     const nombre = document.getElementById('nombre').value.trim();
+    const apellido = document.getElementById('nombre').value.trim();
     const direccion = document.getElementById('direccion').value.trim();
     const telefono = document.getElementById('telefono').value.trim();
     const email = document.getElementById('email').value.trim();
 
     
     if (nombre === "") {
+        alert("El nombre no puede estar vacío.");
+        return;
+    }
+
+    if (apellido === "") {
         alert("El nombre no puede estar vacío.");
         return;
     }
