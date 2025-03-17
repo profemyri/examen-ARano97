@@ -1,7 +1,7 @@
     document.getElementById('index.html').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    
+     
     const nombre = document.getElementById('nombre').value.trim();
     const apellido = document.getElementById('nombre').value.trim();
     const direccion = document.getElementById('direccion').value.trim();
