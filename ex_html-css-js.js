@@ -1,4 +1,4 @@
-    document.getElementById('miFormulario').addEventListener('submit', function(event) {
+    document.getElementById('index.html').addEventListener('submit', function(event) {
     event.preventDefault();
 
     
