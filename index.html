@@ -62,10 +62,25 @@
         <br>
 
         <h2>Precio total: $<span id="totalPrice">0.00</span></h2>
-
-        <button type="button" id="submitBtn" onclick="confirmOrder()">Enviar pedido</button>
-
-        
+        <label>
+            <input type="checkbox" name="ingredientes" value="bacon">
+            Bacon
+        </label><br>
+            <legend>Cantidad (obligatorio):</legend>
+        <label>
+            <input type="checkbox" name="ingredientes" value="queso">
+            Queso
+        </label><br>
+            <legend>Cantidad (obligatorio):</legend>
+        <label>
+            <input type="checkbox" name="ingredientes" value="huevo">
+            Huevo
+        </label><br>
+            <legend>Cantidad (obligatorio):</legend>
+        <label>
+            <input type="checkbox" name="ingredientes" value="patatas">
+            Patatas
+        </label>
         <legend>Cantidad (obligatorio):</legend>
         <input type="number" name="cantidad" min="1" max="5" required>
 
