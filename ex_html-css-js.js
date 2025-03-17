@@ -20,8 +20,8 @@
     }
 
     
-    const telefonoRegex = /^[0-9]{9}$/;
-    if (!telefonoRegex.test(telefono)) {
+    const telefono = /^[0-9]{9}$/;
+    if (!telefono.test(telefono)) {
         alert("El teléfono debe tener exactamente 9 dígitos.");
         return;
     }
