@@ -25,6 +25,10 @@ img {
     margin-bottom: 15px;
 }
 
+encabezadin {
+   text-align: center;
+}
+
 form {
     background-color: #ffffff;
     border-radius: 5px;
